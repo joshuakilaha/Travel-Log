@@ -16,14 +16,8 @@ class LogTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pageTitle()
         getTravelLogs()
-
-    
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     
@@ -35,6 +29,16 @@ class LogTableViewController: UITableViewController {
     
     //MARK: FUnctions
     
+    //Title
+    
+    private func pageTitle() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Destinations"
+    }
+    
+    
+    
+    //GET LOGS
     fileprivate func getTravelLogs() {
         Service.shared.getLogs { (res) in
             switch res {
@@ -48,6 +52,20 @@ class LogTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    //Navigation
+    private func moveToDestinationView(_ logs: LogEntry) {
+        let toDestinationVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "logDestination") as! ViewController
+        
+         toDestinationVC.logs = logs
+        
+        
+          self.navigationController?.pushViewController(toDestinationVC, animated: true)
+    }
+    
+    
+    
 
     // MARK: - Table view data source
 
@@ -66,6 +84,12 @@ class LogTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        moveToDestinationView(logs[indexPath.row])
+    }
 
     /*
     // Override to support conditional editing of the table view.

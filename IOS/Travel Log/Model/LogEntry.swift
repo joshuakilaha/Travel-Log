@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
 
 class LogEntry: Decodable {
     
+   
+
     let _id: String
     let title: String
     let comments: String
@@ -20,4 +24,6 @@ class LogEntry: Decodable {
     let longitude: Double
     let visitDate: String
 
+    
 }
+

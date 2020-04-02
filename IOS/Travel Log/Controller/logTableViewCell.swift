@@ -35,6 +35,8 @@ class logTableViewCell: UITableViewCell {
         titleLable.text = logs.title
         descriptionTextView.text = logs.description
         
+        roundImage()
+        
         // converting image url
         if let imageurl = URL(string: imageInURL) {
                    do {
@@ -48,5 +50,10 @@ class logTableViewCell: UITableViewCell {
                }
         
     }
+    
+    
+    func roundImage() {
+           imageLocation.layer.cornerRadius = 15
+       }
 
 }

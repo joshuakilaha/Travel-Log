@@ -37,7 +37,7 @@ class Service: NSObject {
                            catch {
                                completion(.failure(error))
                            }
-                          print(String(data: data, encoding: .utf8) ?? "")
+                          //print(String(data: data, encoding: .utf8) ?? "")
             }
         }.resume()
     
