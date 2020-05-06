@@ -18,9 +18,24 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 app.use(morgan('common'));
 app.use(helmet());
-app.use(cors({
-    origin: process.env.CORS_ORIGIN,
-}));
+// app.use(cors({
+//     origin: process.env.CORS_ORIGIN,
+// }));
+
+
+// PREVENTING CORS (security mechanism for the browser) ERRORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    if (req.method === "OPTIONS") {
+        res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+        return res.status(200).json({});
+    }
+    next();
+});
 
 //interpreting  the request body
 app.use(express.json());
@@ -38,6 +53,6 @@ app.use(middlware.handlingErrors);
 
 const  port = process.env.PORT || 1337;
 app.listen(port, () => {
-    console.log('listening at http://localhost:${port}');
+    console.log(`listening at http://localhost:${port}`);
 });
 
