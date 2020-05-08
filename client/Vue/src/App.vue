@@ -2,10 +2,10 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="secondary"
       dark
     >
-      
+
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -16,31 +16,27 @@
           width="40"
         />
 
-        <v-card-text class="text-uppercase" > Destinations </v-card-text>
+        <v-card-text class="text-uppercase"><router-link to="/">Destinations</router-link></v-card-text>
       </div>
 
       <v-spacer></v-spacer>
-
-      <v-btn text = "Add">
-        <span class="mr-2">ADD</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-btn><router-link to="/LogEntries">Add</router-link></v-btn>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view to="/"></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+
   },
 
   data: () => ({
