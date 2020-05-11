@@ -10,7 +10,8 @@ import Foundation
 
 
 struct LogEntries: Decodable, Identifiable {
-    public  var id: String
+
+    public var id: String
     public  var title: String
     public  var comments: String
     public  var rating: Int
@@ -19,7 +20,20 @@ struct LogEntries: Decodable, Identifiable {
     public  var latitude: Double
     public  var longitude: Double
     public  var visitDate: String
-    
+
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case rating = "rating"
+        case description = "description"
+        case image = "image"
+        case latitude = "latitude"
+        case longitude = "longitude"
+        case visitDate = "visitDate"
+        case comments = "comments"
+        case id = "_id"
+
+        }
+
 }
 
 //struct LogEntries: Decodable {

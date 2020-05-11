@@ -15,6 +15,8 @@
 		AB68D4D62466D1FC00E2FA89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB68D4D42466D1FC00E2FA89 /* LaunchScreen.storyboard */; };
 		AB68D4DF2466D30900E2FA89 /* LogEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68D4DE2466D30900E2FA89 /* LogEntries.swift */; };
 		AB68D4E32466D3AE00E2FA89 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68D4E22466D3AE00E2FA89 /* Service.swift */; };
+		AB7C40692469F894001EE244 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C40682469F894001EE244 /* Movie.swift */; };
+		AB7C406B2469F8DD001EE244 /* MovieFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C406A2469F8DD001EE244 /* MovieFetcher.swift */; };
 		ABF868732467FD8C008E29C8 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF868722467FD8C008E29C8 /* CircleImage.swift */; };
 		ABF8687524680201008E29C8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8687424680201008E29C8 /* MapView.swift */; };
 		ABF8687F24681B28008E29C8 /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8687E24681B28008E29C8 /* Destinations.swift */; };
@@ -33,6 +35,8 @@
 		AB68D4D72466D1FC00E2FA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB68D4DE2466D30900E2FA89 /* LogEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntries.swift; sourceTree = "<group>"; };
 		AB68D4E22466D3AE00E2FA89 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		AB7C40682469F894001EE244 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		AB7C406A2469F8DD001EE244 /* MovieFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFetcher.swift; sourceTree = "<group>"; };
 		ABF868722467FD8C008E29C8 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		ABF8687424680201008E29C8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		ABF8687E24681B28008E29C8 /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				AB68D4DE2466D30900E2FA89 /* LogEntries.swift */,
+				AB7C40682469F894001EE244 /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				AB68D4E22466D3AE00E2FA89 /* Service.swift */,
 				ABF8688624682C3C008E29C8 /* Data.swift */,
+				AB7C406A2469F8DD001EE244 /* MovieFetcher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,9 +203,11 @@
 				ABF8688124681B96008E29C8 /* DestinationRow.swift in Sources */,
 				ABF8687F24681B28008E29C8 /* Destinations.swift in Sources */,
 				AB68D4CC2466D1FA00E2FA89 /* SceneDelegate.swift in Sources */,
+				AB7C406B2469F8DD001EE244 /* MovieFetcher.swift in Sources */,
 				AB68D4E32466D3AE00E2FA89 /* Service.swift in Sources */,
 				AB68D4CE2466D1FA00E2FA89 /* ContentView.swift in Sources */,
 				AB68D4DF2466D30900E2FA89 /* LogEntries.swift in Sources */,
+				AB7C40692469F894001EE244 /* Movie.swift in Sources */,
 				ABF868732467FD8C008E29C8 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
