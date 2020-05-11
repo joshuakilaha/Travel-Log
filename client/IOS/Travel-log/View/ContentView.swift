@@ -88,20 +88,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-  //  @ObservedObject var fetcher = MovieFetcher()
     @ObservedObject var fetch = Service()
     
     var body: some View {
-//        VStack {
-//            List(fetcher.movies) { movie in
-//                VStack (alignment: .leading) {
-//                    Text(movie.name)
-//                    Text(movie.released)
-//                        .font(.system(size: 11))
-//                        .foregroundColor(Color.gray)
-//                }
-//            }
-//        }
+
         
         VStack {
             List(fetch.logs) { log in
