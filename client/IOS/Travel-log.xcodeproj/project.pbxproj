@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4276A9246AF5980016F0AE /* AddDesination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4276A8246AF5980016F0AE /* AddDesination.swift */; };
 		AB68D4CA2466D1FA00E2FA89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68D4C92466D1FA00E2FA89 /* AppDelegate.swift */; };
 		AB68D4CC2466D1FA00E2FA89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68D4CB2466D1FA00E2FA89 /* SceneDelegate.swift */; };
 		AB68D4CE2466D1FA00E2FA89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68D4CD2466D1FA00E2FA89 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB4276A8246AF5980016F0AE /* AddDesination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDesination.swift; sourceTree = "<group>"; };
 		AB68D4C62466D1FA00E2FA89 /* Travel-log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB68D4C92466D1FA00E2FA89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB68D4CB2466D1FA00E2FA89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				ABF8687424680201008E29C8 /* MapView.swift */,
 				ABF8687E24681B28008E29C8 /* Destinations.swift */,
 				ABF8688024681B96008E29C8 /* DestinationRow.swift */,
+				AB4276A8246AF5980016F0AE /* AddDesination.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				AB68D4CC2466D1FA00E2FA89 /* SceneDelegate.swift in Sources */,
 				AB68D4E32466D3AE00E2FA89 /* Service.swift in Sources */,
 				AB68D4CE2466D1FA00E2FA89 /* ContentView.swift in Sources */,
+				AB4276A9246AF5980016F0AE /* AddDesination.swift in Sources */,
 				AB68D4DF2466D30900E2FA89 /* LogEntries.swift in Sources */,
 				ABF868732467FD8C008E29C8 /* CircleImage.swift in Sources */,
 			);
