@@ -9,60 +9,56 @@
 import SwiftUI
 
 struct AddDesination: View {
-    @State var username: String = ""
-    @State var isPrivate: Bool = true
-    @State var notificationsEnabled: Bool = false
-    @State private var previewIndex = 0
+    @ObservedObject var order : Order
+    
     
     var body: some View {
+        
         NavigationView {
             VStack(alignment: .leading) {
+                
       Form {
         Section(header: Text("Detination")) {
-            TextField("Title", text: $username)
-            TextField("Description", text: $username)
-            TextField("Image URl", text: $username)
+            TextField("Title", text: $order.title )
+            TextField("Description", text: $order.description)
+            TextField("Image URl", text: $order.image)
         }
         
         Section(header: Text("Reviews")) {
-            TextField("Comments", text: $username)
-            TextField("Rating", text: $username)
+            TextField("Comments", text: $order.comments)
+            TextField("Rating", text: $order.rating)
         }
         
                Section(header: Text("Location")) {
-                   TextField("longitude", text: $username)
-                   TextField("Latitude", text: $username)
+                TextField("longitude", text: $order.longitude)
+                TextField("Latitude", text: $order.latitude)
                }
         }
                 .navigationBarItems(trailing:
                     Button(action: {
-                        print("Edit button pressed...")
+                        print("Save Button Pressed")
+                        
                     }) {
+                        NavigationLink(destination: ContentView(order: order)) {
                         Text("Save")
                         .padding(.all)
                         .background(Color.blue)
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .font(Font.body.bold())
-                        
-
+                        }
+//                        .disabled(order.valiedDetails == false)
                     }
                 )
-    }
-        
-        
+            }
            .navigationBarTitle("Add Destination")
-            
         }
     }
 }
 
 
-
-
-
 struct AddDesination_Previews: PreviewProvider {
     static var previews: some View {
-        AddDesination()
+        AddDesination(order: Order())
     }
 }

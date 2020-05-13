@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var fetch = Service()
     @State var selection: Int? = nil
+    
+    @ObservedObject var order = Order()
     var body: some View {
 
         NavigationView {
@@ -33,7 +35,7 @@ struct ContentView: View {
                     
                     
                 }) {
-                    NavigationLink(destination: AddDesination()) {
+                    NavigationLink(destination: AddDesination(order: Order())) {
                    Image(systemName: "plus")
                     }
                 }

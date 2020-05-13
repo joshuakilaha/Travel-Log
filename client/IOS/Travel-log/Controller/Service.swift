@@ -20,7 +20,7 @@ class Service: ObservableObject {
 
     func getLogs() {
         let url = URL(string: "http://localhost:1337/api/logs")!
-
+        
         URLSession.shared.dataTask(with: url) { (data,response,error) in
             do {
                 if let entries = data {
