@@ -18,7 +18,7 @@ class Order: ObservableObject, Codable {
   //  @Published var _id = ""
     @Published var title = ""
     @Published var comments = ""
-    @Published  var rating = 0
+    @Published  var rating = 2
     @Published  var description = ""
     @Published  var image = ""
     @Published  var latitude = 0.0

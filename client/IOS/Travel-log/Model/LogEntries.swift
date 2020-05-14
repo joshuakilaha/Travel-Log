@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct LogEntries: Decodable, Identifiable {
+struct LogEntries: Codable, Identifiable {
 
     public var id: String
     public  var title: String
