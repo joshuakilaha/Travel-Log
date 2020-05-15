@@ -38,7 +38,7 @@ const  logEntrySchema = new Schema ({
     },
     visitDate: {
         type: Date,
-       // required: true
+       required: true
     },
 },
     {
