@@ -50,4 +50,20 @@ router.delete('/:id', async function (req, res) {
 
 });
 
+
+//UPDATE Request
+router.put('/:id', async function (req,res) {
+
+    try {
+        const destination = await LogEntry.findById(req.params.id)
+            .exec();
+        destination.set(req.body);
+        const updatedDestination = await  destination.save();
+        res.send(updatedDestination)
+    }
+    catch (error) {
+        res.status(500).send(error);
+    }
+});
+
 module.exports = router;
