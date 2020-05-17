@@ -15,7 +15,6 @@ class Order: ObservableObject, Codable {
         case title, comments, rating, description, image, latitude, longitude, visitDate
     }
     
-  //  @Published var _id = ""
     @Published var title = ""
     @Published var comments = ""
     @Published  var rating = 2
@@ -23,7 +22,7 @@ class Order: ObservableObject, Codable {
     @Published  var image = ""
     @Published  var latitude = 0.0
     @Published  var longitude = 0.0
-    @Published  var visitDate = ""
+    @Published  var visitDate = Date()
     
     init() { }
     
@@ -37,8 +36,7 @@ class Order: ObservableObject, Codable {
         image = try container.decode(String.self, forKey: .image)
         latitude = try container.decode(Double.self, forKey: .latitude)
         longitude = try container.decode(Double.self, forKey: .longitude)
-        visitDate = try container.decode(String.self, forKey: .visitDate)
-        
+        visitDate = try container.decode(Date.self, forKey: .visitDate)
     }
     
     func encode(to encoder: Encoder) throws {

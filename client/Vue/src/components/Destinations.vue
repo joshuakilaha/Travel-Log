@@ -50,14 +50,14 @@
       }
     },
     mounted() {
-
+        //Get destinations from server
       axios.get('http://localhost:1337/api/logs')
-
               .then(response => {
                 (this.logEntry = response.data);
                 console.log(response.data._id);
               })
-    }
+          //DELETE Destination
+  }
   }
 </script>
 

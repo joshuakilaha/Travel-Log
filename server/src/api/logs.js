@@ -6,6 +6,7 @@ const router = Router();
 const LogEntry =  require('../modules/modelstuct');
 
 
+
 //POST Request
 router.post('/', async function (req, res, next) {
     try{

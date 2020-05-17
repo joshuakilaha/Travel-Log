@@ -35,19 +35,3 @@ struct LogEntries: Codable, Identifiable {
         }
 
 }
-
-//struct LogEntries: Decodable {
-//    var result : [LogEntryList]
-//}
-//
-//struct LogEntryList: Decodable{
-//    var _id: String
-//    var title: String
-//    var comments: String
-//    var rating: Int
-//    var description: String
-//    var image: String
-//    var latitude: Double
-//    var longitude: Double
-//    var visitDate: String
-//}

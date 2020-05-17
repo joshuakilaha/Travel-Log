@@ -10,9 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var fetch = Service()
-    @State var selection: Int? = nil
     
     @ObservedObject var order = Order()
+    
     var body: some View {
 
         NavigationView {
@@ -24,7 +24,6 @@ struct ContentView: View {
                         Text(log.description)
                         Text(log.comments)
                         Text(log.image)
-                        
                     }
                 }
             }

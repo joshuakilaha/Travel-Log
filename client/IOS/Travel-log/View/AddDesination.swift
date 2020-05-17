@@ -35,36 +35,21 @@ struct AddDesination: View {
                        Text("Rating:   \(order.rating)")
 
             })
-
-//            TextField("Rating", text: $order.rating)
         }
 
 
                Section(header: Text("Location")) {
-//               TextField("Longitude", text: $order.longitude)
-//               TextField("Latitude", text: $order.latitude )
 
-                TextField("Date Visited", text: $order.visitDate)
+                DatePicker(selection: $order.visitDate, in: ...Date(), displayedComponents: .date) {
+                    Text("Select a date")
+                    
+                }
+                 
+                TextField("Longitude", value: $order.longitude, formatter: NumberFormatter())
 
-
-                Stepper(value: $order.longitude, in: -180...180, label: {
-                Text("Longitude:   \(order.longitude)")
-                })
-
-                Stepper(value: $order.latitude, in: -90...90, label: {
-                Text("Latitude:   \(order.latitude)")
-                 })
-
-//                Text("Longitude: \(order.longitude, formatter: Self.$order.longitude)")
-//                Text("Longitude: \(order.latitude, formatter: Self.$order.latitude)")
+                TextField("Latitude", value: $order.latitude, formatter: NumberFormatter())
+                
                }
-
-        Section {
-                           NavigationLink(destination: Added(order: order)) {
-                               Text("To Add")
-                           }
-                       }
-
         }
 
                 Button("Post") {
@@ -72,30 +57,12 @@ struct AddDesination: View {
                 } .alert(isPresented: $showingConfirmation) {
                 Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
                     }
-
-
-
-//         Button(action: {
-//            print("Save Button Pressed")
-//            self.placeOder()
-//            }) {
-//                NavigationLink(destination: ContentView(order: order)) {
-//                Text("Save")
-//                .padding(.all)
-//                .background(Color.blue)
-//                .cornerRadius(10)
-//                .foregroundColor(.white)
-//                .font(Font.body.bold())
-//                }
-//        //  .disabled(order.valiedDetails == false)
-//         } .alert(isPresented: $showingConfirmation) {
-//            Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
-//                }
-
           }
            .navigationBarTitle("Add Destination")
         }
     }
+    
+    
 
     func placeOder() {
               guard let encoded = try? JSONEncoder().encode(order) else {
@@ -133,29 +100,3 @@ struct AddDesination_Previews: PreviewProvider {
     }
 }
 
-
-
-
-
-
-
-
-
-
-////                .navigationBarItems(trailing:
-////                    Button(action: {
-////                        print("Save Button Pressed")
-////                        placeOder()
-////
-////                    }) {
-////                        NavigationLink(destination: ContentView(order: order)) {
-////                        Text("Save")
-////                        .padding(.all)
-////                        .background(Color.blue)
-////                        .cornerRadius(10)
-////                        .foregroundColor(.white)
-////                        .font(Font.body.bold())
-////                        }
-//////                        .disabled(order.valiedDetails == false)
-////                    }
-////                )

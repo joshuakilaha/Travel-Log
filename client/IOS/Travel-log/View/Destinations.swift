@@ -8,26 +8,19 @@
 
 import SwiftUI
 
-//struct Destinations: View {
-//
-//    @State var posts: [Post] = []
-//
-//    var body: some View {
-////        List(posts) { posts in
-////            Text("hey")
-////        }
-////        .onAppear{
-////            Api().getPosts { (posts) in
-////             self.posts = posts
-////                      }
-////          }
-//
-//       Text("hey")
-//    }
-//}
-//
-//struct Destinations_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Destinations()
-//    }
-//}
+struct Destinations: View {
+
+
+     @ObservedObject var fetch = Service()
+    
+    var body: some View {
+        Text("l")
+        
+    }
+}
+
+struct Destinations_Previews: PreviewProvider {
+    static var previews: some View {
+        Destinations()
+    }
+}
