@@ -10,20 +10,19 @@ import SwiftUI
 
 struct DestinationRow: View {
     
-    
+    @ObservedObject var order : Order
     
     var body: some View {
         HStack {
-            Text("m")
+            Text(order.title)
             Spacer()
-            Text("text")
-            
+            Text(order.description)
         }
     }
 }
 
 struct DestinationRow_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationRow()
+        DestinationRow(order: Order())
     }
 }

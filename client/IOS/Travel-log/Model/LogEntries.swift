@@ -19,7 +19,7 @@ struct LogEntries: Codable, Identifiable {
     public  var image: String
     public  var latitude: Double
     public  var longitude: Double
-    public  var visitDate: String
+    public  var visitDate : String
 
     enum CodingKeys: String, CodingKey {
         case title = "title"

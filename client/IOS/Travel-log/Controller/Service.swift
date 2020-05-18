@@ -10,12 +10,15 @@
 import Foundation
 
 
+//let Log: [LogEntries] = getLogs()
+
+
 class Service: ObservableObject {
     @Published var logs = [LogEntries]()
 
     init() {
         getLogs()
-    
+
     }
 
     func getLogs() {

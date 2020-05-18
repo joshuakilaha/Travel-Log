@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-
-
 struct AddDesination: View {
     @ObservedObject var order : Order
 
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    
+    @State var send = Post()
 
     var body: some View {
 
@@ -53,7 +53,9 @@ struct AddDesination: View {
         }
 
                 Button("Post") {
-                    self.placeOder()
+                    self.send.postItem(self.order)
+                    
+                   // self.placeOder()
                 } .alert(isPresented: $showingConfirmation) {
                 Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
                     }
@@ -64,39 +66,40 @@ struct AddDesination: View {
     
     
 
-    func placeOder() {
-              guard let encoded = try? JSONEncoder().encode(order) else {
-                  print("Failed to encode order")
-                  return
-              }
-
-              let url = URL(string: "http://localhost:1337/api/logs")!
-              var request = URLRequest(url: url)
-              request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-              request.httpMethod = "POST"
-              request.httpBody = encoded
-
-              URLSession.shared.dataTask(with: request) {
-                  (data, response, error) in
-                  guard let data = data else {
-                      print(error?.localizedDescription ?? "Unkown error")
-                      return
-                  }
-                if let decodeOrder = try? JSONDecoder().decode(Order.self, from: data) {
-                    self.confirmationMessage = "Your Destination \(decodeOrder.title) has been sent to server"
-                    self.showingConfirmation = true
-                } else {
-                    print("Show error: ",error?.localizedDescription as Any)
-                }
-              }
-          .resume()
-          }
+//    func placeOder() {
+//              guard let encoded = try? JSONEncoder().encode(order) else {
+//                  print("Failed to encode order")
+//                  return
+//              }
+//
+//              let url = URL(string: "http://localhost:1337/api/logs")!
+//              var request = URLRequest(url: url)
+//              request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//              request.httpMethod = "POST"
+//              request.httpBody = encoded
+//
+//              URLSession.shared.dataTask(with: request) {
+//                  (data, response, error) in
+//                  guard let data = data else {
+//                      print(error?.localizedDescription ?? "Unkown error")
+//                      return
+//                  }
+//                if let decodeOrder = try? JSONDecoder().decode(Order.self, from: data) {
+//                    self.confirmationMessage = "Your Destination \(decodeOrder.title) has been sent to server"
+//                    self.showingConfirmation = true
+//                } else {
+//                    print("Show error: ",error?.localizedDescription as Any)
+//                }
+//              }
+//          .resume()
+//          }
 }
 
 
 struct AddDesination_Previews: PreviewProvider {
     static var previews: some View {
-        AddDesination(order: Order())
+        AddDesination(order: Order()
+        )
     }
 }
 

@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct Destinations: View {
-
-
-     @ObservedObject var fetch = Service()
     
-    var body: some View {
-        Text("l")
-        
-    }
+   // @State var order : Order
+     
+     var body: some View {
+         HStack {
+             Text("g")
+             Spacer()
+             Text("k")
+         }
+     }
 }
 
 struct Destinations_Previews: PreviewProvider {

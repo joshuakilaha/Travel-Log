@@ -9,12 +9,14 @@
 import Foundation
 
 
-class Order: ObservableObject, Codable {
+class Order: ObservableObject, Codable, Identifiable {
     
     enum CodingKeys: CodingKey {
-        case title, comments, rating, description, image, latitude, longitude, visitDate
+        
+        case  title, comments, rating, description, image, latitude, longitude, visitDate
     }
     
+  //  @Published var id = ""
     @Published var title = ""
     @Published var comments = ""
     @Published  var rating = 2
@@ -29,6 +31,8 @@ class Order: ObservableObject, Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+      //  id = try container.decode(String.self, forKey: ._id)
+        
         title = try container.decode(String.self, forKey: .title)
         comments = try container.decode(String.self, forKey: .comments)
         rating = try container.decode(Int.self, forKey: .rating)
@@ -42,6 +46,7 @@ class Order: ObservableObject, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
+    //    try container.encode(id, forKey: ._id)
         try container.encode(title, forKey: .title)
         try container.encode(comments, forKey: .comments)
         try container.encode(rating, forKey: .rating)
